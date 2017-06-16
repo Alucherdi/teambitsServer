@@ -1,4 +1,4 @@
-fetch("http://25.6.54.24:8080/user/login", {
+fetch("http://teambits.herokuapp.com/user/login", {
 	method: "POST",
 	headers: {
 		"Content-type": "application/x-www-form-urlencoded"
