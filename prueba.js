@@ -3,13 +3,24 @@ var app = express()
 var nodemailer = require("nodemailer")
 
 app.get("/", function (req, res) {
-    res.send("<a href=\"\/sendMail\">Send Mail </a>")
+    res.send("<a href='/sendMail'>Send Mail </a> <br> <a href='/other'>other</a>")
+})
+
+app.get("/other", function (req, res) {
+    res.send("<h1> :p </h1>")
 })
 
 app.get("/sendMail", function (req, res) {
-    var transporter = nodemailer.createTransport('smtps://alucherdi%40gmail.com:mundofreak666@smtp.gmail.com')
+    var transporter = nodemailer.createTransport({
+        service: "Gmail",
+        auth:  {
+            user: "hjgo127942@gmail.com",
+            pass: "mundofreak666"
+        },
+        connectionTimeout: 5000
+    })
     var mailOptions =  {
-        from: '"Prueba" <alucherdi@gmail.com',
+        from: 'Prueba <alucherdi@gmail.com>',
         to: 'hjgo127942@gmail.com',
         subject: 'Prueba de envío de correo',
         text: 'Mensaje :))))))'

@@ -39,7 +39,13 @@ db.once("open", function () {
 	})
 
 	app.post("/sendEmail", cors(), function (req, res) {
-		var transporter = nodemailer.createTransport('smtps://alucherdi%40gmail.com:mundofreak666@smtp.gmail.com')
+		var transporter = nodemailer.createTransport({
+			service: "Gmail",
+			auth: {
+				user: "hjgo127942@gmail.com",
+				pass: "mundofreak666"
+			},
+			connectionTimeout: 5000)
 		var mailOptions = {
 			from: '"Prueba" <alucherdi@gmail.com',
 			to: 'hjgo127942@gmail.com',
