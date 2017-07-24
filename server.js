@@ -45,7 +45,7 @@ db.once("open", function () {
 				user: "hjgo127942@gmail.com",
 				pass: "mundofreak666"
 			},
-			connectionTimeout: 5000)
+			connectionTimeout: 5000 })
 		var mailOptions = {
 			from: '"Prueba" <alucherdi@gmail.com',
 			to: 'hjgo127942@gmail.com',
